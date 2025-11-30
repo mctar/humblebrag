@@ -143,7 +143,17 @@ const App: React.FC = () => {
         </main>
 
         <footer className="text-center text-white/20 text-sm pt-12">
-          <p>Powered by Gemini 2.5 Flash</p>
+          <p>
+            Powered by{' '}
+            <a
+              href="https://gervilabs.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/60 underline-offset-2 hover:text-white hover:underline transition-colors"
+            >
+              Gervi Labs
+            </a>
+          </p>
         </footer>
       </div>
     </div>
