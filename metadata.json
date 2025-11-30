@@ -1,0 +1,5 @@
+{
+  "name": "HumbleBrag Slider",
+  "description": "Adjust the tone of your statements from extremely humble to absolutely arrogant using a sliding scale powered by Gemini.",
+  "requestFramePermissions": []
+}
