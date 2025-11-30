@@ -30,10 +30,11 @@ This contains everything you need to run the HumbleBrag Slider as a static web a
 
 ## Deploy to GitHub Pages (humblebrag.btrbot.com)
 
-1. Run `npm run build`.  
-2. Publish the `dist/` folder to the branch Pages is configured to serve from (e.g., `gh-pages` or `docs`).  
-3. Ensure the `public/CNAME` file is included so the built site contains `humblebrag.btrbot.com` and GitHub Pages keeps the custom domain.  
-4. In the GitHub repo settings → Pages, set the source branch/folder and configure the custom domain to `humblebrag.btrbot.com`.  
-5. Point the DNS for `humblebrag.btrbot.com` to GitHub Pages (typically a CNAME to `<username>.github.io`).  
+1. Run the automated deploy script:
+   `npm run deploy`
+   - This builds the project and uses `gh-pages` to publish `dist/` to the `gh-pages` branch.
+   - The `public/CNAME` file ensures GitHub keeps the `humblebrag.btrbot.com` custom domain.
+2. In the GitHub repo settings → Pages, confirm Source = `gh-pages` (root) and the custom domain is set to `humblebrag.btrbot.com`.  
+3. Ensure DNS for `humblebrag.btrbot.com` points to GitHub Pages (CNAME → `mctar.github.io`).  
 
 Once DNS propagates, the static build will load from GitHub Pages while calling `https://api.btrbot.com/v1/chat/completions` directly from the browser.

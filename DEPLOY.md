@@ -15,17 +15,13 @@ Use this checklist whenever you ship an update.
    git checkout main
    git pull
    ```
-2. Install deps (only once or after package updates):
+2. Install deps (first time or after package changes):
    ```bash
    npm install
    ```
 3. Run dev server if you want to test:
    ```bash
    npm run dev
-   ```
-4. Build production bundle:
-   ```bash
-   npm run build
    ```
 
 ## 2. Commit + Push Main
@@ -35,20 +31,13 @@ Use this checklist whenever you ship an update.
    git commit -m "Describe update"
    git push origin main
    ```
-2. Verify GitHub Actions (if any) pass.
 
 ## 3. Deploy to GitHub Pages
-1. Make sure `dist/` contains the fresh build.
-2. Publish `dist/` to `gh-pages`:
+1. Run the one-liner:
    ```bash
-   git checkout --orphan gh-pages
-   git reset --hard
-   cp -R dist/* .
-   git add .
-   git commit -m "Deploy $(date '+%Y-%m-%d %H:%M')"
-   git push -f origin gh-pages
-   git checkout main
+   npm run deploy
    ```
+   This builds the project and publishes `dist/` to the `gh-pages` branch via the `gh-pages` CLI.
 
 ## 4. Post-Deploy Checks
 - GitHub → Settings → Pages: confirm Source=`gh-pages` / root.
