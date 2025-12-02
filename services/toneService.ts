@@ -20,6 +20,7 @@ Levels:
 
 Maintain the core meaning of the original sentence, but completely overhaul the vocabulary and tone to match the persona.
 Return ONLY the transformed text. Do not add quotes or explanations.
+All output MUST be written in English, even if the original input is in another language.
 `.trim();
 
 const extractContent = (payload: any): string => {
